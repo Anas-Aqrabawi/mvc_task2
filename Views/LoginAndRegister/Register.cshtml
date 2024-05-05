@@ -1,0 +1,48 @@
+﻿@model User;
+@{
+    Layout = "~/views/shared/_LoginAndRegisterLayout.cshtml";
+}
+
+
+<!-- Sign Up Start -->
+<div class="container-fluid">
+    <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+            <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                   
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Reciply Blog</h3>
+                    <h3>Sign Up</h3>
+                </div>
+
+                <!------------------ Form Starter -------------------->
+                 <form asp-action="Register" method="POST" class="register-form" id="register-form">
+                <div class="form-floating mb-3">
+                    <input asp-for="FirstName" type="text" class="form-control" id="floatingText" placeholder="First Name" required>
+                    <label asp-for="FirstName">First Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="LastName" type="text" class="form-control" id="floatingText" placeholder="Last Name" required>
+                    <label asp-for="LastName">Last Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="username"class="form-control" id="floatingText" placeholder="Username" required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                    <label for="password">Password</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
+                <p class="text-center mb-0">Already have an Account? <a asp-action="Login">Sign In</a></p>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                </form>
+                <!------------------ Form Ending -------------------->
+
+            </div>
+              
+        </div>
+    </div>
+</div>
+<!-- Sign Up End -->
